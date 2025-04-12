@@ -2,10 +2,12 @@ spring:
   application:
     name: demo-spring-boot-34-jdk-21
 logging:
+  file:
+    name: /home/LogFiles/Application/spring-boot.log
+  pattern:
+    file:%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{36} - %msg%n
   level:
-    org:
-      springframework:
-        web: debug
+    org.springframework.web: debug
     root: info
     web: debug
 management:
@@ -14,6 +16,9 @@ management:
       exposure:
         include: "*"
   endpoint:
+    env:
+      show-values: always
+#      show-values: when_authorized
     metrics:
       enabled: true
     health:
