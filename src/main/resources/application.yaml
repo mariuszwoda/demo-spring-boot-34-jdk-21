@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: demo-spring-boot-34-jdk-21
+logging:
+  level:
+    org:
+      springframework:
+        web: debug
+    root: info
+    web: debug
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    metrics:
+      enabled: true
+    health:
+      enabled: true
